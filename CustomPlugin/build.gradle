@@ -1,0 +1,36 @@
+plugins {
+    id 'java-library'
+    id 'maven'
+}
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation "com.android.tools.build:gradle:4.1.0"
+}
+
+repositories {
+    maven { url 'https://maven.aliyun.com/repository/google' }
+    maven { url 'https://maven.aliyun.com/repository/public' }
+    google()
+    jcenter()
+}
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+group='com.istrong.gradle.plugin'
+version='1.0.0'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            //提交到远程服务器：
+            // repository(url: "http://www.xxx.com/repos") {
+            //    authentication(userName: "admin", password: "admin")
+            // }
+            //本地的Maven地址设置为D:/repos
+            repository(url: uri("${rootDir}/repos"))
+            pom.artifactId = "cp"
+        }
+    }
+}

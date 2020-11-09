@@ -1,0 +1,3 @@
+include ':CustomPlugin'
+include ':app'
+rootProject.name = "GradlePluginDemo"

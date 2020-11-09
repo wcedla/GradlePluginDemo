@@ -1,0 +1,17 @@
+plugins {
+    id 'java'
+}
+
+dependencies {
+    implementation 'org.javassist:javassist:3.27.0-GA'
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation "com.android.tools.build:gradle:4.1.0"
+}
+
+repositories {
+    maven { url 'https://maven.aliyun.com/repository/google' }
+    maven { url 'https://maven.aliyun.com/repository/public' }
+    google()
+    jcenter()
+}
